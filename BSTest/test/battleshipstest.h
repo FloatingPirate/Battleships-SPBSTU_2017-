@@ -228,20 +228,8 @@ extern TAT_TEST_RESULT TAT_Send_resetStrategy ( TAT_TEST_INSTANCE * id, TAT_EVEN
 
 extern TAT_TEST_RESULT TAT_Init_battleshipstest (TAT_TEST_INSTANCE * id);
 extern TAT_TEST_TABLE TAT_battleshipstest_TestTable[];
-extern TAT_TEST_RESULT TAT_TI_battleshipstest_Test0001N0( TAT_TEST_INSTANCE* id );
-extern TAT_TEST_RESULT TAT_T_battleshipstest_Test0001N0( TAT_TEST_INSTANCE* id );
-extern TAT_TEST_RESULT TAT_TI_battleshipstest_Test0002N0( TAT_TEST_INSTANCE* id );
-extern TAT_TEST_RESULT TAT_T_battleshipstest_Test0002N0( TAT_TEST_INSTANCE* id );
-extern TAT_TEST_RESULT TAT_TI_battleshipstest_Test0003N0( TAT_TEST_INSTANCE* id );
-extern TAT_TEST_RESULT TAT_T_battleshipstest_Test0003N0( TAT_TEST_INSTANCE* id );
-extern TAT_TEST_RESULT TAT_TI_battleshipstest_Test0004N0( TAT_TEST_INSTANCE* id );
-extern TAT_TEST_RESULT TAT_T_battleshipstest_Test0004N0( TAT_TEST_INSTANCE* id );
-extern TAT_TEST_RESULT TAT_TI_battleshipstest_Test0005N0( TAT_TEST_INSTANCE* id );
-extern TAT_TEST_RESULT TAT_T_battleshipstest_Test0005N0( TAT_TEST_INSTANCE* id );
-extern TAT_TEST_RESULT TAT_TI_battleshipstest_Test0006N0( TAT_TEST_INSTANCE* id );
-extern TAT_TEST_RESULT TAT_T_battleshipstest_Test0006N0( TAT_TEST_INSTANCE* id );
-extern TAT_TEST_RESULT TAT_TI_battleshipstest_Test0007N0( TAT_TEST_INSTANCE* id );
-extern TAT_TEST_RESULT TAT_T_battleshipstest_Test0007N0( TAT_TEST_INSTANCE* id );
-extern TAT_TEST_RESULT TAT_TI_battleshipstest_Test0008N0( TAT_TEST_INSTANCE* id );
-extern TAT_TEST_RESULT TAT_T_battleshipstest_Test0008N0( TAT_TEST_INSTANCE* id );
+extern TAT_TEST_RESULT TAT_TI_battleshipstest_Test11N0( TAT_TEST_INSTANCE* id );
+extern TAT_TEST_RESULT TAT_T_battleshipstest_Test11N0( TAT_TEST_INSTANCE* id );
+extern TAT_TEST_RESULT TAT_TI_battleshipstest_Test12N0( TAT_TEST_INSTANCE* id );
+extern TAT_TEST_RESULT TAT_T_battleshipstest_Test12N0( TAT_TEST_INSTANCE* id );
 #endif

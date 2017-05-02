@@ -1,11 +1,11 @@
-mscdocument Test0001N0;
-msc Test0001N0;
+mscdocument Test11N0;
+msc Test11N0;
 Simulator: instance;
 Strategy: instance;
 Simulator: out /*{@0}*/InitDataComplete,1 to Strategy;
 Strategy: in /*{@0}*/InitDataComplete,1 from Simulator;
-Simulator: out /*{@0}*/ShipsCurrentState,2(1,(: (. 1, 1, 7, 0, 4, 70, (. 100, 70 .), (: 15, 15, 3, 0 :) .) :)) to Strategy;
-Strategy: in /*{@0}*/ShipsCurrentState,2(1,(: (. 1, 1, 7, 0, 4, 70, (. 100, 70 .), (: 15, 15, 3, 0 :) .) :)) from Simulator;
+Simulator: out /*{@0}*/ShipsCurrentState,2(1,(: (. 1, 1, 1, 0, 3, 70, (. 25, 75 .), (: 15, 15, 3, 0 :) .) :)) to Strategy;
+Strategy: in /*{@0}*/ShipsCurrentState,2(1,(: (. 1, 1, 1, 0, 3, 70, (. 25, 75 .), (: 15, 15, 3, 0 :) .) :)) from Simulator;
 Simulator: out /*{@0}*/StartSimulation,3(0) to Strategy;
 Strategy: in /*{@0}*/StartSimulation,3(0) from Simulator;
 all: condition /*{@4092}*/ERROR comment '<!TAT_ERR_TIMEOUT(Trace0,Event4)!>';

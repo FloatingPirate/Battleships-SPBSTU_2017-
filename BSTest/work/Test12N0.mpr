@@ -1,0 +1,17 @@
+mscdocument Test12N0;
+msc Test12N0/*["C:\Testing\BSTest\PTESTS\Test12.mpr",1,5,14]*/;
+Simulator: instance;
+Strategy: instance;
+Simulator: out InitDataComplete,1 to Strategy/*[0,5]*/;
+Strategy: in InitDataComplete,1 from Simulator/*[0,6]*/;
+Simulator: out ShipsCurrentState,2(1, (: (. 1, 1, CRUISER, 0, SOUTH_WEST, 70, (. 180, 75 .), (: 15, 15, 3, 0 :) .) :)) to Strategy/*[0,7]*/;
+Strategy: in ShipsCurrentState,2(1, (: (. 1, 1, CRUISER, 0, SOUTH_WEST, 70, (. 180, 75 .), (: 15, 15, 3, 0 :) .) :)) from Simulator/*[0,8]*/;
+Simulator: out StartSimulation,3(0) to Strategy/*[0,9]*/;
+Strategy: in StartSimulation,3(0) from Simulator/*[0,10]*/;
+Strategy: out OrderSpeedRequest,4(1, 1, 1.0) to Simulator/*[0,11]*/;
+Simulator: in OrderSpeedRequest,4(1, 1, 1.0) from Strategy/*[0,12]*/;
+Strategy: out FinishSimulation,5(0, 1) to Simulator/*[0,13]*/;
+Simulator: in FinishSimulation,5(0, 1) from Strategy/*[0,14]*/;
+Simulator: endinstance;
+Strategy: endinstance;
+endmsc;

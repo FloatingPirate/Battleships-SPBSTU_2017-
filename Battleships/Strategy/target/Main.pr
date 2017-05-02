@@ -959,17 +959,14 @@ imported
     gShipsCharacter tArrayShipsCharacter;
 /*#SDTREF(SDL,C:\Testing\Battleships\Strategy\Main.spr(1),665(100,25))*/
 synonym 
-   FirstQuaterX Integer = 3*MaxXCoordinate/4,
-   FirstQuaterY Integer = 3*MaxYCoordinate/4,
-   SecondQuaterX Integer = 3*MaxXCoordinate/4,
-   SecondQuaterY Integer = MaxYCoordinate/4,
-   ThirdQuaterX Integer = MaxXCoordinate/4,
-   ThirdQuaterY Integer = MaxYCoordinate/4,
-   FourthQuaterX Integer = MaxXCoordinate/4,
-   FourthQuaterY Integer = 3*MaxYCoordinate/4,
-   FifthQuaterX Integer=MaxXCoordinate/2,
-   FifthQuaterY Integer=MaxYCoordinate/2+20;
-
+FirstQuaterX Integer = 3*MaxXCoordinate/4, 
+FirstQuaterY Integer = 3*MaxYCoordinate/4, 
+SecondQuaterX Integer = MaxXCoordinate/4, 
+SecondQuaterY Integer = MaxYCoordinate/4, 
+ThirdQuaterX Integer = MaxXCoordinate/4, 
+ThirdQuaterY Integer = 3*MaxYCoordinate/4, 
+FourthQuaterX Integer = 3*MaxXCoordinate/4, 
+FourthQuaterY Integer = MaxYCoordinate/4;
 /*#SDTREF(SDL,C:\Testing\Battleships\Strategy\Main.spr(1),506(5,40))*/
 newtype tOrderType
  literals
@@ -2125,85 +2122,86 @@ procedure NextDirection
   CurrHding tHeading,
   Dir tHeadingChange;
   returns NewHeading tHeading;
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),560(120,10))*/
+ 
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),152(135,15))*/
 dcl
    Numbr Integer,
     k Integer;
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),569(75,5))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),149(90,10))*/
 start /*#E*/ 
 ;
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),566(75,40))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),353(90,45))*/
 task {/*#E*/ 
  
 Numbr := h2i(CurrHding);
 
 };
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),557(20,60))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),782(25,65))*/
 decision /*#E*/ 
 index=spyIndex;
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),578(117,67))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),785(132,72))*/
 (false):
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),554(105,80))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),209(120,85))*/
 decision /*#E*/ 
 Dir;
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),581(90,87))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),245(105,92))*/
 (RIGHT):
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),551(90,95))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),239(105,100))*/
 task {/*#E*/ 
  
 Numbr := Numbr +1;
 if (Numbr > 7) Numbr := 0;
 };
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),596(137,87))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),242(152,92))*/
 (LEFT):
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),536(125,95))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),236(140,100))*/
 task {/*#E*/ 
  
 Numbr := Numbr -1;
 if (Numbr < 0) Numbr:= 7;
 };
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),554(105,80))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),209(120,85))*/
 enddecision;
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),545(105,115))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),368(120,120))*/
 task {/*#E*/ 
  
 NewHeading := i2h(Numbr);
 };
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),539(110,140))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),311(125,145))*/
 return /*#E*/ 
 ;
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),605(67,67))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),788(82,72))*/
 (true):
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),530(55,145))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),755(70,150))*/
 decision /*#E*/ 
 Dir;
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),608(40,152))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),758(55,157))*/
 (RIGHT):
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),527(40,160))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),752(55,165))*/
 task {/*#E*/ 
  
 Numbr := Numbr +3;
 if (Numbr >7) Numbr := 0;
 };
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),623(87,152))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),773(102,157))*/
 (LEFT):
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),512(75,160))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),737(90,165))*/
 task {/*#E*/ 
  
 Numbr := Numbr -3;
 if (Numbr < 0) Numbr:= 7;
 };
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),530(55,145))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),755(70,150))*/
 enddecision;
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),521(55,180))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),746(70,185))*/
 task {/*#E*/ 
  
 NewHeading := i2h(Numbr);
 };
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),515(60,205))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),740(75,210))*/
 return /*#E*/ 
 ;
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),557(20,60))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd(1),782(25,65))*/
 enddecision;
 /*#SDTREF(SDL,C:\Testing\Battleships\Strategy\NextDirection.spd,4)*/
 endprocedure NextDirection;
@@ -3104,129 +3102,111 @@ endprocedure OutputOrder;
 procedure FindStartPoint;
 /*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd,1)*/
  
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),437(135,70))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),137(135,5))*/
 newtype Dist 
    Array(Integer,Integer)
 endnewtype;
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),434(135,85))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),143(135,20))*/
 dcl 
    d Dist,
    count, i, min Integer;
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),431(30,90))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),128(30,25))*/
 start /*#E*/ 
 ;
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),428(30,105))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),125(30,40))*/
 task {/*#E*/ 
  
 d(1) := call getDistance(MyCenter!x,MyCenter!y,FirstQuaterX, FirstQuaterY);
 d(2) := call getDistance(MyCenter!x,MyCenter!y,SecondQuaterX, SecondQuaterY);
 d(3) := call getDistance(MyCenter!x,MyCenter!y,ThirdQuaterX, ThirdQuaterY);
 d(4) := call getDistance(MyCenter!x,MyCenter!y,FourthQuaterX, FourthQuaterY);
-d(5) := call getDistance(MyCenter!x,MyCenter!y,FifthQuaterX, FifthQuaterY);
 min := d(1); count:=1;
 };
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),422(30,125))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),353(30,60))*/
 task {/*#E*/ 
  
-for (i:=2,i<=5,i+1){
+for (i:=1,i<=4,i+1){
  if (d(i)<=min) {
    min := d(i);
    count := i; } 
 }
 };
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),416(30,145))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),308(30,80))*/
 decision /*#E*/ 
 count;
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),455(125,147))*/
-(5):
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),413(140,150))*/
-task {/*#E*/ 
-HeadingTarget !x:= FifthQuaterX;
-HeadingTarget !y:= FifthQuaterY;};
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),461(72,150))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),332(72,85))*/
 (4):
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),407(60,155))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),305(60,90))*/
 task {/*#E*/ 
  
 HeadingTarget !x:= FourthQuaterX;
 HeadingTarget !y:= FourthQuaterY;
 };
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),470(57,155))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),329(57,90))*/
 (3):
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),401(45,170))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),299(45,105))*/
 task {/*#E*/ 
  
 HeadingTarget !x:= ThirdQuaterX;
 HeadingTarget !y:= ThirdQuaterY;
 };
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),479(42,155))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),326(42,90))*/
 (2):
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),395(30,185))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),293(30,120))*/
 task {/*#E*/ 
  
 HeadingTarget !x:= SecondQuaterX;
 HeadingTarget !y:= SecondQuaterY;
 };
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),488(27,155))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),323(27,90))*/
 (1):
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),389(15,200))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),287(15,135))*/
 task {/*#E*/ 
  
 HeadingTarget !x:= FirstQuaterX;
 HeadingTarget !y:= FirstQuaterY;
 };
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),416(30,145))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),308(30,80))*/
 enddecision;
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),410(35,215))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd(1),245(35,150))*/
 return /*#E*/ 
 ;
 /*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindStartPoint.spd,4)*/
 endprocedure FindStartPoint;
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\SearchHeadingTarget.spd,4)*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindHeadingTarget.spd,4)*/
 procedure FindHeadingTarget;
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\SearchHeadingTarget.spd(1),176(45,20))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindHeadingTarget.spd(1),116(55,25))*/
 start /*#E*/ 
 ;
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\SearchHeadingTarget.spd(1),173(45,45))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindHeadingTarget.spd(1),137(55,50))*/
 task {/*#E*/ 
  
-if ((HeadingTarget!x = FifthQuaterX) AND 
-    (HeadingTarget!y = FifthQuaterY)) {
-      HeadingTarget!x :=  FirstQuaterX;
-      HeadingTarget!y :=  FirstQuaterY;
-} 
-else {
-  if ((HeadingTarget!x = FirstQuaterX) AND 
-    (HeadingTarget!y = FirstQuaterY)) {
+if ((HeadingTarget!x = FirstQuaterX) AND 
+    (HeadingTarget!y = FirstQuaterY)){
       HeadingTarget!x :=  SecondQuaterX;
       HeadingTarget!y :=  SecondQuaterY;
   } 
-  else { 
-    if ((HeadingTarget!x = SecondQuaterX) AND 
-        (HeadingTarget!y = SecondQuaterY)) {
+  else if((HeadingTarget!x = SecondQuaterX) AND 
+        (HeadingTarget!y = SecondQuaterY)){ 
          HeadingTarget!x :=  ThirdQuaterX;
          HeadingTarget!y :=  ThirdQuaterY;
-    }  
-    else {
-     if ((HeadingTarget!x = ThirdQuaterX) AND 
-         (HeadingTarget!y = ThirdQuaterY)) {
+}  
+    else if ((HeadingTarget!x = ThirdQuaterX) AND 
+         (HeadingTarget!y = ThirdQuaterY))  {
           HeadingTarget!x :=  FourthQuaterX;
           HeadingTarget!y :=  FourthQuaterY;
-     }
-     else 
-    if ((HeadingTarget!x = FourthQuaterX) AND 
+ }
+     else if ((HeadingTarget!x = FourthQuaterX) AND 
         (HeadingTarget!y = FourthQuaterY)) {
-         HeadingTarget!x :=  FifthQuaterX;
-         HeadingTarget!y :=  FifthQuaterY;}
-    
-    }
-  }
+         HeadingTarget!x :=  FirstQuaterX;
+         HeadingTarget!y :=  FirstQuaterY;
 }
+
 };
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\SearchHeadingTarget.spd(1),167(50,125))*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindHeadingTarget.spd(1),119(60,130))*/
 return /*#E*/ 
 ;
-/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\SearchHeadingTarget.spd,4)*/
+/*#SDTREF(SDL,C:\Testing\Battleships\Strategy\FindHeadingTarget.spd,4)*/
 endprocedure FindHeadingTarget;
 /*#SDTREF(SDL,C:\Testing\Battleships\Strategy\OnLand.spd,4)*/
 procedure OnLand
