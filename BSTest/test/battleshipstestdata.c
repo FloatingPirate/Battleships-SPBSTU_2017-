@@ -784,10 +784,12 @@ TAT_TEST_RESULT TAT_Init_battleshipstest (TAT_TEST_INSTANCE * id)
 	qsort(id->signalDef, id->signalCount, sizeof(TAT_SIGNAL_DEF), _ssort);
 	qsort(id->instanceDef, id->instanceCount, sizeof(TAT_INSTANCE_DEF), _isort);
 	id->currSuiteName = "battleshipstest";
-	id->testCount = 2;
+	id->testCount = 4;
 	id->testTable = (TAT_TEST_TABLE *)&TAT_battleshipstest_TestTable;
 	return TAT_TEST_CONTINUE;
 }
 TAT_TEST_TABLE TAT_battleshipstest_TestTable[]={
-{"Test11N0", TAT_T_battleshipstest_Test11N0, TAT_TI_battleshipstest_Test11N0},
-{"Test12N0", TAT_T_battleshipstest_Test12N0, TAT_TI_battleshipstest_Test12N0}};
+{"Test1_1N0", TAT_T_battleshipstest_Test1_1N0, TAT_TI_battleshipstest_Test1_1N0},
+{"Test1_2N0", TAT_T_battleshipstest_Test1_2N0, TAT_TI_battleshipstest_Test1_2N0},
+{"Test1_3N0", TAT_T_battleshipstest_Test1_3N0, TAT_TI_battleshipstest_Test1_3N0},
+{"Test1_4N0", TAT_T_battleshipstest_Test1_4N0, TAT_TI_battleshipstest_Test1_4N0}};

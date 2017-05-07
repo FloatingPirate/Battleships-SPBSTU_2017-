@@ -73,6 +73,12 @@
 #ifndef Main_STACKSIZE
 #define Main_STACKSIZE 1024
 #endif
+#ifndef Sim_TIME
+#define Sim_TIME 0
+#endif
+#ifndef Sim_STACKSIZE
+#define Sim_STACKSIZE 1024
+#endif
 #endif
    /* XHS */
 

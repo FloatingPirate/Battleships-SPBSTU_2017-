@@ -137,13 +137,10 @@
   </CONFIG>
   <SPECFILES>
     <SET name="mpr" type="">
-      <FILE path="mpr/Test0001.mpr"/>
-      <FILE path="mpr/Test0002.mpr"/>
-      <FILE path="mpr/Test0003.mpr"/>
-      <FILE path="mpr/Test0004.mpr"/>
-      <FILE path="mpr/Test0005.mpr"/>
-      <FILE path="mpr/Test0006.mpr"/>
-      <FILE path="mpr/Test0007.mpr"/>
+      <FILE path="PTESTS/Test1_1.mpr"/>
+      <FILE path="PTESTS/Test1_2.mpr"/>
+      <FILE path="PTESTS/Test1_3.mpr"/>
+      <FILE path="PTESTS/Test1_4.mpr"/>
     </SET>
   </SPECFILES>
   <TOOLS>
