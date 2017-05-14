@@ -7,14 +7,10 @@ REMARK: Test case "Test1_3N0" generation started
 REMARK: Test case "Test1_3N0" generation finished
 REMARK: Test case "Test1_4N0" generation started
 REMARK: Test case "Test1_4N0" generation finished
-REMARK: Test case "Test1_5N0" generation started
-REMARK: Test case "Test1_5N0" generation finished
 REMARK: Test case "Test1_6N0" generation started
 REMARK: Test case "Test1_6N0" generation finished
 REMARK: Test case "Test2_1N0" generation started
 REMARK: Test case "Test2_1N0" generation finished
-REMARK: Test case "Test2_2N0" generation started
-REMARK: Test case "Test2_2N0" generation finished
 REMARK: Test case "Test2_3N0" generation started
 REMARK: Test case "Test2_3N0" generation finished
 REMARK: Test case "Test2_4N0" generation started
@@ -25,4 +21,6 @@ REMARK: Test case "Test3_1N0" generation started
 REMARK: Test case "Test3_1N0" generation finished
 REMARK: Test case "Test3_3N0" generation started
 REMARK: Test case "Test3_3N0" generation finished
+REMARK: Test case "Test3_6N0" generation started
+REMARK: Test case "Test3_6N0" generation finished
 REMARK: Test suite "battleshipstest" generation finished

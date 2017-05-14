@@ -141,15 +141,14 @@
       <FILE path="PTESTS/Test1_2.mpr"/>
       <FILE path="PTESTS/Test1_3.mpr"/>
       <FILE path="PTESTS/Test1_4.mpr"/>
-      <FILE path="PTESTS/Test1_5.mpr"/>
       <FILE path="PTESTS/Test1_6.mpr"/>
       <FILE path="PTESTS/Test2_1.mpr"/>
-      <FILE path="PTESTS/Test2_2.mpr"/>
       <FILE path="PTESTS/Test2_3.mpr"/>
       <FILE path="PTESTS/Test2_4.mpr"/>
       <FILE path="PTESTS/Test2_5.mpr"/>
       <FILE path="PTESTS/Test3_1.mpr"/>
-      <FILE path="PTESTS/Test3_5.mpr"/>
+      <FILE path="PTESTS/Test3_3.mpr"/>
+      <FILE path="PTESTS/Test3_6.mpr"/>
     </SET>
   </SPECFILES>
   <TOOLS>
