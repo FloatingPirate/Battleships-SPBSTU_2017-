@@ -53,7 +53,7 @@ set SignalSet [list \
 "messageLog"  "out"  [list ] [ list "SDL_Charstring" ] [ list -1 ] [ list Param1 ] "C" 0 100\
 "resetStrategy"  "in"  [list ] [ list ] [ list ] [ list ] "C" 0 100\
 ]
-set TestCaseNames [list "Test1_1N0" "Test1_2N0" "Test1_3N0" "Test1_4N0" "Test1_5N0" "Test1_6N0"]
+set TestCaseNames [list "Test1_1N0" "Test1_2N0" "Test1_3N0" "Test1_4N0" "Test1_5N0" "Test1_6N0" "Test2_1N0" "Test2_2N0" "Test2_3N0" "Test2_4N0" "Test2_5N0" "Test3_1N0" "Test3_3N0"]
 set DATATYPE_NAME 0
 set DATATYPE_TYPE 1
 set DATATYPE_DIMENSION 2
@@ -355,7 +355,7 @@ StartTestCase "Test1_6N0" 1 [ list ]\
 [ list ]  0 0 \
 [ list \
 "InitDataComplete()"\
-"ShipsCurrentState(1,(: (. 1, 1, DESTROYER, 0, WEST, 70, (. 180, 75 .), (: 15, 15, 3, 0 :) .), (. 2, 1, MISSILE_CUTTER, 0, SOUTH, 70, (. 180, 65 .), (: 15, 15, 3, 0 :) .) :))"\
+"ShipsCurrentState(1,(: (. 1, 1, DESTROYER, 0, SOUTH_WEST, 70, (. 180, 75 .), (: 15, 15, 3, 0 :) .), (. 2, 1, MISSILE_CUTTER, 0, SOUTH, 70, (. 180, 65 .), (: 15, 15, 3, 0 :) .) :))"\
 "StartSimulation(0)"\
 "OrderSpeedRequest(1,1,1.0)"\
 "OrderSpeedRequest(2,1,1.0)"\
@@ -374,7 +374,7 @@ StartTestCase "Test1_6N0" 1 [ list ]\
 ]\
 [ list \
 [ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 0  PASS  [list [list 0 5 ] [list 1 5 ] ] "" "" [list  2 [ list  ]  0 [ list REL "0" "0" ] ] ]\
-[ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 1  PASS  [list [list 0 7 ] [list 1 7 ] ] "" "" [list  12 [ list [ list "" "1"  ] [ list "" [list ARRAY [list STRUCT "1" "1" "DESTROYER" "0" "WEST" "70" [list STRUCT "180" "75"] [list ARRAY "15" "15" "3" "0"]] [list STRUCT "2" "1" "MISSILE_CUTTER" "0" "SOUTH" "70" [list STRUCT "180" "65"] [list ARRAY "15" "15" "3" "0"]]]  ]  ]  1 [ list REL "0" "0" ] ] ]\
+[ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 1  PASS  [list [list 0 7 ] [list 1 7 ] ] "" "" [list  12 [ list [ list "" "1"  ] [ list "" [list ARRAY [list STRUCT "1" "1" "DESTROYER" "0" "SOUTH_WEST" "70" [list STRUCT "180" "75"] [list ARRAY "15" "15" "3" "0"]] [list STRUCT "2" "1" "MISSILE_CUTTER" "0" "SOUTH" "70" [list STRUCT "180" "65"] [list ARRAY "15" "15" "3" "0"]]]  ]  ]  1 [ list REL "0" "0" ] ] ]\
 [ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 2  PASS  [list [list 0 9 ] [list 1 9 ] ] "" "" [list  13 [ list [ list "" "0"  ]  ]  2 [ list REL "0" "0" ] ] ]\
 [ list "recv" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 3  PASS  [list [list 0 11 ] [list 1 11 ] ] "" "" [list  7 [ list [ list "" "1"  ] [ list "" "1"  ] [ list "" "1.0"  ]  ]  3 [ list REL "0" "0" ] ] ]\
 [ list "recv" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 4  PASS  [list [list 0 13 ] [list 1 13 ] ] "" "" [list  7 [ list [ list "" "2"  ] [ list "" "1"  ] [ list "" "1.0"  ]  ]  4 [ list REL "0" "0" ] ] ]\
@@ -406,5 +406,411 @@ State 5 0 0 1 0 0 [list \
 ]
 
 FinishTestCase "Test1_6N0"
+
+
+StartTestCase "Test2_1N0" 1 [ list ]\
+[ list ]\
+[ list ]  0 0 \
+[ list \
+"InitDataComplete()"\
+"ShipsCurrentState(1,(: (. 1, 1, CRUISER, 0, NORTH, 70, (. 50, 50 .), (: 15, 15, 3, 0 :) .):))"\
+"VisibleShip(1,(: (. 1, 2, REPAIR_BOAT, 0, SOUTH, (. 50, 60 .).),(. 2, 2, CRUISER, 0, SOUTH, (. 56, 60 .).) :))"\
+"StartSimulation(0)"\
+"OrderFireRequest(1,1,0,(: (. 50, 60 .) :))"\
+"FinishSimulation(0,1)"\
+] [ list  ]\
+[ list  [list "C:\\Testing\\BSTest\\PTESTS\\Test2_1.mpr" 1 5 16 ]\
+[list "C:\\Testing\\BSTest\\work\\Test2_1N0.mpr" 2 5 16 ]\
+]\
+[ list \
+ [list  0  1  ]\
+ [list  0  1  ]\
+ [list  0  1  ]\
+ [list  0  1  ]\
+ [list  1  0  ]\
+ [list  1  0  ]\
+]\
+[ list \
+[ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 0  PASS  [list [list 0 5 ] [list 1 5 ] ] "" "" [list  2 [ list  ]  0 [ list REL "0" "0" ] ] ]\
+[ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 1  PASS  [list [list 0 7 ] [list 1 7 ] ] "" "" [list  12 [ list [ list "" "1"  ] [ list "" [list ARRAY [list STRUCT "1" "1" "CRUISER" "0" "NORTH" "70" [list STRUCT "50" "50"] [list ARRAY "15" "15" "3" "0"]]]  ]  ]  1 [ list REL "0" "0" ] ] ]\
+[ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 2  PASS  [list [list 0 9 ] [list 1 9 ] ] "" "" [list  16 [ list [ list "" "1"  ] [ list "" [list ARRAY [list STRUCT "1" "2" "REPAIR_BOAT" "0" "SOUTH" [list STRUCT "50" "60"]] [list STRUCT "2" "2" "CRUISER" "0" "SOUTH" [list STRUCT "56" "60"]]]  ]  ]  2 [ list REL "0" "0" ] ] ]\
+[ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 3  PASS  [list [list 0 11 ] [list 1 11 ] ] "" "" [list  13 [ list [ list "" "0"  ]  ]  3 [ list REL "0" "0" ] ] ]\
+[ list "recv" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 4  PASS  [list [list 0 13 ] [list 1 13 ] ] "" "" [list  4 [ list [ list "" "1"  ] [ list "" "1"  ] [ list "" "0"  ] [ list "" [list ARRAY [list STRUCT "50" "60"]]  ]  ]  4 [ list REL "0" "0" ] ] ]\
+[ list "recv" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 5  PASS  [list [list 0 15 ] [list 1 15 ] ] "" "" [list  1 [ list [ list "" "0"  ] [ list "" "1"  ]  ]  5 [ list REL "0" "0" ] ] ]\
+] 1 0
+
+State 0 0 0 0 1 0 [list \
+[list 0  1 ]\
+]
+
+State 1 0 0 0 1 0 [list \
+[list 1  2 ]\
+]
+
+State 2 0 0 0 1 0 [list \
+[list 2  3 ]\
+]
+
+State 3 0 0 0 1 0 [list \
+[list 3  4 ]\
+]
+
+State 4 0 0 1 0 0 [list \
+[list 4  5 ]\
+]
+
+State 5 0 0 1 0 0 [list \
+[list 5  -1 ]\
+]
+
+FinishTestCase "Test2_1N0"
+
+
+StartTestCase "Test2_2N0" 1 [ list ]\
+[ list ]\
+[ list ]  0 0 \
+[ list \
+"InitDataComplete()"\
+"ShipsCurrentState(1,(: (. 1, 1, CRUISER, 0, NORTH, 70, (. 50, 50 .), (: 0, 0, 0, 0 :) .):))"\
+"VisibleShip(1,(: (. 1, 2, REPAIR_BOAT, 0, SOUTH, (. 50, 60 .).),(. 2, 2, CRUISER, 0, SOUTH, (. 50, 75 .).) :))"\
+"StartSimulation(0)"\
+"OrderSpeedRequest(1,1,1.0)"\
+"FinishSimulation(0,1)"\
+] [ list  ]\
+[ list  [list "C:\\Testing\\BSTest\\PTESTS\\Test2_2.mpr" 1 5 16 ]\
+[list "C:\\Testing\\BSTest\\work\\Test2_2N0.mpr" 2 5 16 ]\
+]\
+[ list \
+ [list  0  1  ]\
+ [list  0  1  ]\
+ [list  0  1  ]\
+ [list  0  1  ]\
+ [list  1  0  ]\
+ [list  1  0  ]\
+]\
+[ list \
+[ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 0  PASS  [list [list 0 5 ] [list 1 5 ] ] "" "" [list  2 [ list  ]  0 [ list REL "0" "0" ] ] ]\
+[ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 1  PASS  [list [list 0 7 ] [list 1 7 ] ] "" "" [list  12 [ list [ list "" "1"  ] [ list "" [list ARRAY [list STRUCT "1" "1" "CRUISER" "0" "NORTH" "70" [list STRUCT "50" "50"] [list ARRAY "0" "0" "0" "0"]]]  ]  ]  1 [ list REL "0" "0" ] ] ]\
+[ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 2  PASS  [list [list 0 9 ] [list 1 9 ] ] "" "" [list  16 [ list [ list "" "1"  ] [ list "" [list ARRAY [list STRUCT "1" "2" "REPAIR_BOAT" "0" "SOUTH" [list STRUCT "50" "60"]] [list STRUCT "2" "2" "CRUISER" "0" "SOUTH" [list STRUCT "50" "75"]]]  ]  ]  2 [ list REL "0" "0" ] ] ]\
+[ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 3  PASS  [list [list 0 11 ] [list 1 11 ] ] "" "" [list  13 [ list [ list "" "0"  ]  ]  3 [ list REL "0" "0" ] ] ]\
+[ list "recv" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 4  PASS  [list [list 0 13 ] [list 1 13 ] ] "" "" [list  7 [ list [ list "" "1"  ] [ list "" "1"  ] [ list "" "1.0"  ]  ]  4 [ list REL "0" "0" ] ] ]\
+[ list "recv" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 5  PASS  [list [list 0 15 ] [list 1 15 ] ] "" "" [list  1 [ list [ list "" "0"  ] [ list "" "1"  ]  ]  5 [ list REL "0" "0" ] ] ]\
+] 1 0
+
+State 0 0 0 0 1 0 [list \
+[list 0  1 ]\
+]
+
+State 1 0 0 0 1 0 [list \
+[list 1  2 ]\
+]
+
+State 2 0 0 0 1 0 [list \
+[list 2  3 ]\
+]
+
+State 3 0 0 0 1 0 [list \
+[list 3  4 ]\
+]
+
+State 4 0 0 1 0 0 [list \
+[list 4  5 ]\
+]
+
+State 5 0 0 1 0 0 [list \
+[list 5  -1 ]\
+]
+
+FinishTestCase "Test2_2N0"
+
+
+StartTestCase "Test2_3N0" 1 [ list ]\
+[ list ]\
+[ list ]  0 0 \
+[ list \
+"InitDataComplete()"\
+"ShipsCurrentState(1,(: (. 1, 1, CRUISER, 0, NORTH, 70, (. 50, 50 .), (: 15, 15, 3, 0 :) .):))"\
+"VisibleShip(1,(: (. 1, 2, CRUISER, 0, SOUTH, (. 50, 60 .).),(. 2, 2, CRUISER, 0, SOUTH, (. 56, 67 .).) :))"\
+"StartSimulation(0)"\
+"OrderFireRequest(1,1,0,(: (. 50, 60 .) :))"\
+"FinishSimulation(0,1)"\
+] [ list  ]\
+[ list  [list "C:\\Testing\\BSTest\\PTESTS\\Test2_3.mpr" 1 5 16 ]\
+[list "C:\\Testing\\BSTest\\work\\Test2_3N0.mpr" 2 5 16 ]\
+]\
+[ list \
+ [list  0  1  ]\
+ [list  0  1  ]\
+ [list  0  1  ]\
+ [list  0  1  ]\
+ [list  1  0  ]\
+ [list  1  0  ]\
+]\
+[ list \
+[ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 0  PASS  [list [list 0 5 ] [list 1 5 ] ] "" "" [list  2 [ list  ]  0 [ list REL "0" "0" ] ] ]\
+[ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 1  PASS  [list [list 0 7 ] [list 1 7 ] ] "" "" [list  12 [ list [ list "" "1"  ] [ list "" [list ARRAY [list STRUCT "1" "1" "CRUISER" "0" "NORTH" "70" [list STRUCT "50" "50"] [list ARRAY "15" "15" "3" "0"]]]  ]  ]  1 [ list REL "0" "0" ] ] ]\
+[ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 2  PASS  [list [list 0 9 ] [list 1 9 ] ] "" "" [list  16 [ list [ list "" "1"  ] [ list "" [list ARRAY [list STRUCT "1" "2" "CRUISER" "0" "SOUTH" [list STRUCT "50" "60"]] [list STRUCT "2" "2" "CRUISER" "0" "SOUTH" [list STRUCT "56" "67"]]]  ]  ]  2 [ list REL "0" "0" ] ] ]\
+[ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 3  PASS  [list [list 0 11 ] [list 1 11 ] ] "" "" [list  13 [ list [ list "" "0"  ]  ]  3 [ list REL "0" "0" ] ] ]\
+[ list "recv" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 4  PASS  [list [list 0 13 ] [list 1 13 ] ] "" "" [list  4 [ list [ list "" "1"  ] [ list "" "1"  ] [ list "" "0"  ] [ list "" [list ARRAY [list STRUCT "50" "60"]]  ]  ]  4 [ list REL "0" "0" ] ] ]\
+[ list "recv" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 5  PASS  [list [list 0 15 ] [list 1 15 ] ] "" "" [list  1 [ list [ list "" "0"  ] [ list "" "1"  ]  ]  5 [ list REL "0" "0" ] ] ]\
+] 1 0
+
+State 0 0 0 0 1 0 [list \
+[list 0  1 ]\
+]
+
+State 1 0 0 0 1 0 [list \
+[list 1  2 ]\
+]
+
+State 2 0 0 0 1 0 [list \
+[list 2  3 ]\
+]
+
+State 3 0 0 0 1 0 [list \
+[list 3  4 ]\
+]
+
+State 4 0 0 1 0 0 [list \
+[list 4  5 ]\
+]
+
+State 5 0 0 1 0 0 [list \
+[list 5  -1 ]\
+]
+
+FinishTestCase "Test2_3N0"
+
+
+StartTestCase "Test2_4N0" 1 [ list ]\
+[ list ]\
+[ list ]  0 0 \
+[ list \
+"InitDataComplete()"\
+"ShipsCurrentState(1,(: (. 1, 1, DESTROYER, 0, SOUTH_WEST, 20, (. 180, 60 .), (: 15, 15, 3, 0 :) .), (. 2, 1, REPAIR_BOAT, 0, SOUTH, 70, (. 180, 65 .), (: 15, 15, 3, 2 :) .) :))"\
+"VisibleShip(1,(: (. 1, 1, DESTROYER, 0, SOUTH_WEST,(. 180, 50 .).) :))"\
+"StartSimulation(0)"\
+"OrderFireRequest(1,1,0,(: :))"\
+"OrderFireRequest(2,1,3,(: (. 180, 60 .):))"\
+"FinishSimulation(0,1)"\
+] [ list  ]\
+[ list  [list "C:\\Testing\\BSTest\\PTESTS\\Test2_4.mpr" 1 5 18 ]\
+[list "C:\\Testing\\BSTest\\work\\Test2_4N0.mpr" 2 5 18 ]\
+]\
+[ list \
+ [list  0  1  ]\
+ [list  0  1  ]\
+ [list  0  1  ]\
+ [list  0  1  ]\
+ [list  1  0  ]\
+ [list  1  0  ]\
+ [list  1  0  ]\
+]\
+[ list \
+[ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 0  PASS  [list [list 0 5 ] [list 1 5 ] ] "" "" [list  2 [ list  ]  0 [ list REL "0" "0" ] ] ]\
+[ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 1  PASS  [list [list 0 7 ] [list 1 7 ] ] "" "" [list  12 [ list [ list "" "1"  ] [ list "" [list ARRAY [list STRUCT "1" "1" "DESTROYER" "0" "SOUTH_WEST" "20" [list STRUCT "180" "60"] [list ARRAY "15" "15" "3" "0"]] [list STRUCT "2" "1" "REPAIR_BOAT" "0" "SOUTH" "70" [list STRUCT "180" "65"] [list ARRAY "15" "15" "3" "2"]]]  ]  ]  1 [ list REL "0" "0" ] ] ]\
+[ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 2  PASS  [list [list 0 9 ] [list 1 9 ] ] "" "" [list  16 [ list [ list "" "1"  ] [ list "" [list ARRAY [list STRUCT "1" "1" "DESTROYER" "0" "SOUTH_WEST" [list STRUCT "180" "50"]]]  ]  ]  2 [ list REL "0" "0" ] ] ]\
+[ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 3  PASS  [list [list 0 11 ] [list 1 11 ] ] "" "" [list  13 [ list [ list "" "0"  ]  ]  3 [ list REL "0" "0" ] ] ]\
+[ list "recv" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 4  PASS  [list [list 0 13 ] [list 1 13 ] ] "" "" [list  4 [ list [ list "" "1"  ] [ list "" "1"  ] [ list "" "0"  ] [ list "" [list ARRAY ]  ]  ]  4 [ list REL "0" "0" ] ] ]\
+[ list "recv" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 5  PASS  [list [list 0 15 ] [list 1 15 ] ] "" "" [list  4 [ list [ list "" "2"  ] [ list "" "1"  ] [ list "" "3"  ] [ list "" [list ARRAY [list STRUCT "180" "60"]]  ]  ]  5 [ list REL "0" "0" ] ] ]\
+[ list "recv" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 6  PASS  [list [list 0 17 ] [list 1 17 ] ] "" "" [list  1 [ list [ list "" "0"  ] [ list "" "1"  ]  ]  6 [ list REL "0" "0" ] ] ]\
+] 1 0
+
+State 0 0 0 0 1 0 [list \
+[list 0  1 ]\
+]
+
+State 1 0 0 0 1 0 [list \
+[list 1  2 ]\
+]
+
+State 2 0 0 0 1 0 [list \
+[list 2  3 ]\
+]
+
+State 3 0 0 0 1 0 [list \
+[list 3  4 ]\
+]
+
+State 4 0 0 1 0 0 [list \
+[list 4  5 ]\
+]
+
+State 5 0 0 1 0 0 [list \
+[list 5  6 ]\
+]
+
+State 6 0 0 1 0 0 [list \
+[list 6  -1 ]\
+]
+
+FinishTestCase "Test2_4N0"
+
+
+StartTestCase "Test2_5N0" 1 [ list ]\
+[ list ]\
+[ list ]  0 0 \
+[ list \
+"InitDataComplete()"\
+"ShipsCurrentState(1,(: (. 1, 1, CRUISER, 0, SOUTH, 70, (. 50, 50 .), (: 0, 0, 0, 0 :) .):))"\
+"VisibleShip(1,(: (. 1, 2, REPAIR_BOAT, 0, SOUTH, (. 50, 40 .).) :))"\
+"StartSimulation(0)"\
+"OrderSpeedRequest(1,1,1.0)"\
+"FinishSimulation(0,1)"\
+] [ list  ]\
+[ list  [list "C:\\Testing\\BSTest\\PTESTS\\Test2_5.mpr" 1 5 16 ]\
+[list "C:\\Testing\\BSTest\\work\\Test2_5N0.mpr" 2 5 16 ]\
+]\
+[ list \
+ [list  0  1  ]\
+ [list  0  1  ]\
+ [list  0  1  ]\
+ [list  0  1  ]\
+ [list  1  0  ]\
+ [list  1  0  ]\
+]\
+[ list \
+[ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 0  PASS  [list [list 0 5 ] [list 1 5 ] ] "" "" [list  2 [ list  ]  0 [ list REL "0" "0" ] ] ]\
+[ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 1  PASS  [list [list 0 7 ] [list 1 7 ] ] "" "" [list  12 [ list [ list "" "1"  ] [ list "" [list ARRAY [list STRUCT "1" "1" "CRUISER" "0" "SOUTH" "70" [list STRUCT "50" "50"] [list ARRAY "0" "0" "0" "0"]]]  ]  ]  1 [ list REL "0" "0" ] ] ]\
+[ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 2  PASS  [list [list 0 9 ] [list 1 9 ] ] "" "" [list  16 [ list [ list "" "1"  ] [ list "" [list ARRAY [list STRUCT "1" "2" "REPAIR_BOAT" "0" "SOUTH" [list STRUCT "50" "40"]]]  ]  ]  2 [ list REL "0" "0" ] ] ]\
+[ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 3  PASS  [list [list 0 11 ] [list 1 11 ] ] "" "" [list  13 [ list [ list "" "0"  ]  ]  3 [ list REL "0" "0" ] ] ]\
+[ list "recv" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 4  PASS  [list [list 0 13 ] [list 1 13 ] ] "" "" [list  7 [ list [ list "" "1"  ] [ list "" "1"  ] [ list "" "1.0"  ]  ]  4 [ list REL "0" "0" ] ] ]\
+[ list "recv" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 5  PASS  [list [list 0 15 ] [list 1 15 ] ] "" "" [list  1 [ list [ list "" "0"  ] [ list "" "1"  ]  ]  5 [ list REL "0" "0" ] ] ]\
+] 1 0
+
+State 0 0 0 0 1 0 [list \
+[list 0  1 ]\
+]
+
+State 1 0 0 0 1 0 [list \
+[list 1  2 ]\
+]
+
+State 2 0 0 0 1 0 [list \
+[list 2  3 ]\
+]
+
+State 3 0 0 0 1 0 [list \
+[list 3  4 ]\
+]
+
+State 4 0 0 1 0 0 [list \
+[list 4  5 ]\
+]
+
+State 5 0 0 1 0 0 [list \
+[list 5  -1 ]\
+]
+
+FinishTestCase "Test2_5N0"
+
+
+StartTestCase "Test3_1N0" 1 [ list ]\
+[ list ]\
+[ list ]  0 0 \
+[ list \
+"InitDataComplete()"\
+"ShipsCurrentState(1,(: (. 1, 1, CRUISER, 0, WEST, 70, (. 2, 98.), (: 15, 15, 3, 0 :) .) :))"\
+"StartSimulation(0)"\
+"OrderTurnRequest(1,1,LEFT)"\
+"FinishSimulation(0,1)"\
+] [ list  ]\
+[ list  [list "C:\\Testing\\BSTest\\PTESTS\\Test3_1.mpr" 1 5 14 ]\
+[list "C:\\Testing\\BSTest\\work\\Test3_1N0.mpr" 2 5 14 ]\
+]\
+[ list \
+ [list  0  1  ]\
+ [list  0  1  ]\
+ [list  0  1  ]\
+ [list  1  0  ]\
+ [list  1  0  ]\
+]\
+[ list \
+[ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 0  PASS  [list [list 0 5 ] [list 1 5 ] ] "" "" [list  2 [ list  ]  0 [ list REL "0" "0" ] ] ]\
+[ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 1  PASS  [list [list 0 7 ] [list 1 7 ] ] "" "" [list  12 [ list [ list "" "1"  ] [ list "" [list ARRAY [list STRUCT "1" "1" "CRUISER" "0" "WEST" "70" [list STRUCT "2" "98"] [list ARRAY "15" "15" "3" "0"]]]  ]  ]  1 [ list REL "0" "0" ] ] ]\
+[ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 2  PASS  [list [list 0 9 ] [list 1 9 ] ] "" "" [list  13 [ list [ list "" "0"  ]  ]  2 [ list REL "0" "0" ] ] ]\
+[ list "recv" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 3  PASS  [list [list 0 11 ] [list 1 11 ] ] "" "" [list  10 [ list [ list "" "1"  ] [ list "" "1"  ] [ list "" "LEFT"  ]  ]  3 [ list REL "0" "0" ] ] ]\
+[ list "recv" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 4  PASS  [list [list 0 13 ] [list 1 13 ] ] "" "" [list  1 [ list [ list "" "0"  ] [ list "" "1"  ]  ]  4 [ list REL "0" "0" ] ] ]\
+] 1 0
+
+State 0 0 0 0 1 0 [list \
+[list 0  1 ]\
+]
+
+State 1 0 0 0 1 0 [list \
+[list 1  2 ]\
+]
+
+State 2 0 0 0 1 0 [list \
+[list 2  3 ]\
+]
+
+State 3 0 0 1 0 0 [list \
+[list 3  4 ]\
+]
+
+State 4 0 0 1 0 0 [list \
+[list 4  -1 ]\
+]
+
+FinishTestCase "Test3_1N0"
+
+
+StartTestCase "Test3_3N0" 1 [ list ]\
+[ list ]\
+[ list ]  0 0 \
+[ list \
+"InitDataComplete()"\
+"ShipsCurrentState(1,(: (. 1, 1, DESTROYER, 1, NORTH, 20, (. 25, 25 .), (: 15, 15, 3, 0 :) .), (. 2, 1, CRUISER, 1, SOUTH, 70, (. 25, 30.), (: 15, 15, 3, 2 :) .) :))"\
+"StartSimulation(0)"\
+"OrderTurnRequest(1,1,LEFT)"\
+"OrderSpeedRequest(2,1,-1.0)"\
+"FinishSimulation(0,1)"\
+] [ list  ]\
+[ list  [list "C:\\Testing\\BSTest\\PTESTS\\Test3_3.mpr" 1 5 16 ]\
+[list "C:\\Testing\\BSTest\\work\\Test3_3N0.mpr" 2 5 16 ]\
+]\
+[ list \
+ [list  0  1  ]\
+ [list  0  1  ]\
+ [list  0  1  ]\
+ [list  1  0  ]\
+ [list  1  0  ]\
+ [list  1  0  ]\
+]\
+[ list \
+[ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 0  PASS  [list [list 0 5 ] [list 1 5 ] ] "" "" [list  2 [ list  ]  0 [ list REL "0" "0" ] ] ]\
+[ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 1  PASS  [list [list 0 7 ] [list 1 7 ] ] "" "" [list  12 [ list [ list "" "1"  ] [ list "" [list ARRAY [list STRUCT "1" "1" "DESTROYER" "1" "NORTH" "20" [list STRUCT "25" "25"] [list ARRAY "15" "15" "3" "0"]] [list STRUCT "2" "1" "CRUISER" "1" "SOUTH" "70" [list STRUCT "25" "30"] [list ARRAY "15" "15" "3" "2"]]]  ]  ]  1 [ list REL "0" "0" ] ] ]\
+[ list "send" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 2  PASS  [list [list 0 9 ] [list 1 9 ] ] "" "" [list  13 [ list [ list "" "0"  ]  ]  2 [ list REL "0" "0" ] ] ]\
+[ list "recv" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 3  PASS  [list [list 0 11 ] [list 1 11 ] ] "" "" [list  10 [ list [ list "" "1"  ] [ list "" "1"  ] [ list "" "LEFT"  ]  ]  3 [ list REL "0" "0" ] ] ]\
+[ list "recv" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 4  PASS  [list [list 0 13 ] [list 1 13 ] ] "" "" [list  7 [ list [ list "" "2"  ] [ list "" "1"  ] [ list "" "-1.0"  ]  ]  4 [ list REL "0" "0" ] ] ]\
+[ list "recv" [list [ list REL "0" "INF" ] [ list REL "0" "INF" ] ] [list ] [list ] "" 5  PASS  [list [list 0 15 ] [list 1 15 ] ] "" "" [list  1 [ list [ list "" "0"  ] [ list "" "1"  ]  ]  5 [ list REL "0" "0" ] ] ]\
+] 1 0
+
+State 0 0 0 0 1 0 [list \
+[list 0  1 ]\
+]
+
+State 1 0 0 0 1 0 [list \
+[list 1  2 ]\
+]
+
+State 2 0 0 0 1 0 [list \
+[list 2  3 ]\
+]
+
+State 3 0 0 1 0 0 [list \
+[list 3  4 ]\
+]
+
+State 4 0 0 1 0 0 [list \
+[list 4  5 ]\
+]
+
+State 5 0 0 1 0 0 [list \
+[list 5  -1 ]\
+]
+
+FinishTestCase "Test3_3N0"
 
 EndTestSuite "battleshipstest"

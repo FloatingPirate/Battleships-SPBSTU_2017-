@@ -42,10 +42,77 @@ RMRK: Test Test1_5N0 finished. Status=TAT_ERR_TIMEOUT (Iteration: 0)
 
 RMRK: Test case Test1_6N0 started. (Iteration:0)
 {000000}[0005] SEND: InitDataComplete <Simulator->Strategy>
-{000000}[0007] SEND: ShipsCurrentState(1,(: (. 1, 1, 2, 0, 6, 70, (. 180, 75 .), (: 15, 15, 3, 0 :) .), (. 2, 1, 3, 0, 4, 70, (. 180, 65 .), (: 15, 15, 3, 0 :) .) :)) <Simulator->Strategy>
+{000000}[0007] SEND: ShipsCurrentState(1,(: (. 1, 1, 2, 0, 5, 70, (. 180, 75 .), (: 15, 15, 3, 0 :) .), (. 2, 1, 3, 0, 4, 70, (. 180, 65 .), (: 15, 15, 3, 0 :) .) :)) <Simulator->Strategy>
 {000000}[0009] SEND: StartSimulation(0) <Simulator->Strategy>
-{000000}[0011] RECV: OrderSpeedRequest(1,1,1.000000) <Strategy->Simulator>
-{000000}[0013] RECV: OrderSpeedRequest(2,1,1.000000) <Strategy->Simulator>
+ERROR: Timeout error
+There are 3 signals left in the Queue:
+-- {004094} RECV: OrderTurnRequest(1,1,1) <Strategy->Simulator>
+-- {004094} RECV: OrderSpeedRequest(2,1,1.000000) <Strategy->Simulator>
+-- {004094} RECV: FinishSimulation(0,1) <Strategy->Simulator>
+RMRK: Test Test1_6N0 finished. Status=TAT_ERR_TIMEOUT (Iteration: 0)
+
+RMRK: Test case Test2_1N0 started. (Iteration:0)
+{000000}[0005] SEND: InitDataComplete <Simulator->Strategy>
+{000000}[0007] SEND: ShipsCurrentState(1,(: (. 1, 1, 1, 0, 0, 70, (. 50, 50 .), (: 15, 15, 3, 0 :) .) :)) <Simulator->Strategy>
+{000000}[0009] SEND: VisibleShip(1,(: (. 1, 2, 4, 0, 4, (. 50, 60 .) .), (. 2, 2, 1, 0, 4, (. 56, 60 .) .) :)) <Simulator->Strategy>
+{000000}[0011] SEND: StartSimulation(0) <Simulator->Strategy>
+{000000}[0013] RECV: OrderFireRequest(1,1,0,(: (. 50, 60 .) :)) <Strategy->Simulator>
 {000000}[0015] RECV: FinishSimulation(0,1) <Strategy->Simulator>
-RMRK: Test Test1_6N0 finished. Status=TAT_OK (Iteration: 0)
+RMRK: Test Test2_1N0 finished. Status=TAT_OK (Iteration: 0)
+
+RMRK: Test case Test2_2N0 started. (Iteration:0)
+{000000}[0005] SEND: InitDataComplete <Simulator->Strategy>
+{000000}[0007] SEND: ShipsCurrentState(1,(: (. 1, 1, 1, 0, 0, 70, (. 50, 50 .), (: 0, 0, 0, 0 :) .) :)) <Simulator->Strategy>
+{000000}[0009] SEND: VisibleShip(1,(: (. 1, 2, 4, 0, 4, (. 50, 60 .) .), (. 2, 2, 1, 0, 4, (. 50, 75 .) .) :)) <Simulator->Strategy>
+{000000}[0011] SEND: StartSimulation(0) <Simulator->Strategy>
+{000000}[0013] RECV: OrderSpeedRequest(1,1,1.000000) <Strategy->Simulator>
+{000000}[0015] RECV: FinishSimulation(0,1) <Strategy->Simulator>
+RMRK: Test Test2_2N0 finished. Status=TAT_OK (Iteration: 0)
+
+RMRK: Test case Test2_3N0 started. (Iteration:0)
+{000000}[0005] SEND: InitDataComplete <Simulator->Strategy>
+{000000}[0007] SEND: ShipsCurrentState(1,(: (. 1, 1, 1, 0, 0, 70, (. 50, 50 .), (: 15, 15, 3, 0 :) .) :)) <Simulator->Strategy>
+{000000}[0009] SEND: VisibleShip(1,(: (. 1, 2, 1, 0, 4, (. 50, 60 .) .), (. 2, 2, 1, 0, 4, (. 56, 67 .) .) :)) <Simulator->Strategy>
+{000000}[0011] SEND: StartSimulation(0) <Simulator->Strategy>
+{000000}[0013] RECV: OrderFireRequest(1,1,0,(: (. 50, 60 .) :)) <Strategy->Simulator>
+{000000}[0015] RECV: FinishSimulation(0,1) <Strategy->Simulator>
+RMRK: Test Test2_3N0 finished. Status=TAT_OK (Iteration: 0)
+
+RMRK: Test case Test2_4N0 started. (Iteration:0)
+{000000}[0005] SEND: InitDataComplete <Simulator->Strategy>
+{000000}[0007] SEND: ShipsCurrentState(1,(: (. 1, 1, 2, 0, 5, 20, (. 180, 60 .), (: 15, 15, 3, 0 :) .), (. 2, 1, 4, 0, 4, 70, (. 180, 65 .), (: 15, 15, 3, 2 :) .) :)) <Simulator->Strategy>
+{000000}[0009] SEND: VisibleShip(1,(: (. 1, 1, 2, 0, 5, (. 180, 50 .) .) :)) <Simulator->Strategy>
+{000000}[0011] SEND: StartSimulation(0) <Simulator->Strategy>
+{000000}[0013] RECV: OrderFireRequest(1,1,0,(:  :)) <Strategy->Simulator>
+{000000}[0015] RECV: OrderFireRequest(2,1,3,(: (. 180, 60 .) :)) <Strategy->Simulator>
+{000000}[0017] RECV: FinishSimulation(0,1) <Strategy->Simulator>
+RMRK: Test Test2_4N0 finished. Status=TAT_OK (Iteration: 0)
+
+RMRK: Test case Test2_5N0 started. (Iteration:0)
+{000000}[0005] SEND: InitDataComplete <Simulator->Strategy>
+{000000}[0007] SEND: ShipsCurrentState(1,(: (. 1, 1, 1, 0, 4, 70, (. 50, 50 .), (: 0, 0, 0, 0 :) .) :)) <Simulator->Strategy>
+{000000}[0009] SEND: VisibleShip(1,(: (. 1, 2, 4, 0, 4, (. 50, 40 .) .) :)) <Simulator->Strategy>
+{000000}[0011] SEND: StartSimulation(0) <Simulator->Strategy>
+{000000}[0013] RECV: OrderSpeedRequest(1,1,1.000000) <Strategy->Simulator>
+{000000}[0015] RECV: FinishSimulation(0,1) <Strategy->Simulator>
+RMRK: Test Test2_5N0 finished. Status=TAT_OK (Iteration: 0)
+
+RMRK: Test case Test3_1N0 started. (Iteration:0)
+{000000}[0005] SEND: InitDataComplete <Simulator->Strategy>
+{000000}[0007] SEND: ShipsCurrentState(1,(: (. 1, 1, 1, 0, 6, 70, (. 2, 98 .), (: 15, 15, 3, 0 :) .) :)) <Simulator->Strategy>
+{000000}[0009] SEND: StartSimulation(0) <Simulator->Strategy>
+{000000}[0011] RECV: OrderTurnRequest(1,1,0) <Strategy->Simulator>
+{000000}[0013] RECV: FinishSimulation(0,1) <Strategy->Simulator>
+RMRK: Test Test3_1N0 finished. Status=TAT_OK (Iteration: 0)
+
+RMRK: Test case Test3_3N0 started. (Iteration:0)
+{000000}[0005] SEND: InitDataComplete <Simulator->Strategy>
+{000000}[0007] SEND: ShipsCurrentState(1,(: (. 1, 1, 2, 1, 0, 20, (. 25, 25 .), (: 15, 15, 3, 0 :) .), (. 2, 1, 1, 1, 4, 70, (. 25, 30 .), (: 15, 15, 3, 2 :) .) :)) <Simulator->Strategy>
+{000000}[0009] SEND: StartSimulation(0) <Simulator->Strategy>
+ERROR: Timeout error
+There are 3 signals left in the Queue:
+-- {004094} RECV: OrderSpeedRequest(1,1,1.000000) <Strategy->Simulator>
+-- {004094} RECV: OrderSpeedRequest(2,1,1.000000) <Strategy->Simulator>
+-- {004094} RECV: FinishSimulation(0,1) <Strategy->Simulator>
+RMRK: Test Test3_3N0 finished. Status=TAT_ERR_TIMEOUT (Iteration: 0)
 

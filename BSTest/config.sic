@@ -143,6 +143,13 @@
       <FILE path="PTESTS/Test1_4.mpr"/>
       <FILE path="PTESTS/Test1_5.mpr"/>
       <FILE path="PTESTS/Test1_6.mpr"/>
+      <FILE path="PTESTS/Test2_1.mpr"/>
+      <FILE path="PTESTS/Test2_2.mpr"/>
+      <FILE path="PTESTS/Test2_3.mpr"/>
+      <FILE path="PTESTS/Test2_4.mpr"/>
+      <FILE path="PTESTS/Test2_5.mpr"/>
+      <FILE path="PTESTS/Test3_1.mpr"/>
+      <FILE path="PTESTS/Test3_5.mpr"/>
     </SET>
   </SPECFILES>
   <TOOLS>
@@ -214,7 +221,7 @@
     </TOOL>
   </TOOLS>
   <TESTSUITE>
-    <TESTCASE name="testcase0">
+    <TESTCASE name="PisAgeAtrTestCase">
       <PIPE isexec="1" name="full_execution">
         <DATAIN name="MPR" value="C:/Testing/BSTest/mpr.lst"/>
         <DATAOUT name="VERDICT" value="verdict/battleshipstest.txt"/>
