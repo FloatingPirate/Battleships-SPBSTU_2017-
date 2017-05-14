@@ -236,4 +236,8 @@ extern TAT_TEST_RESULT TAT_TI_battleshipstest_Test1_3N0( TAT_TEST_INSTANCE* id )
 extern TAT_TEST_RESULT TAT_T_battleshipstest_Test1_3N0( TAT_TEST_INSTANCE* id );
 extern TAT_TEST_RESULT TAT_TI_battleshipstest_Test1_4N0( TAT_TEST_INSTANCE* id );
 extern TAT_TEST_RESULT TAT_T_battleshipstest_Test1_4N0( TAT_TEST_INSTANCE* id );
+extern TAT_TEST_RESULT TAT_TI_battleshipstest_Test1_5N0( TAT_TEST_INSTANCE* id );
+extern TAT_TEST_RESULT TAT_T_battleshipstest_Test1_5N0( TAT_TEST_INSTANCE* id );
+extern TAT_TEST_RESULT TAT_TI_battleshipstest_Test1_6N0( TAT_TEST_INSTANCE* id );
+extern TAT_TEST_RESULT TAT_T_battleshipstest_Test1_6N0( TAT_TEST_INSTANCE* id );
 #endif

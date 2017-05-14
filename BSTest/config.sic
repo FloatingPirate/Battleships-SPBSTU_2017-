@@ -141,6 +141,8 @@
       <FILE path="PTESTS/Test1_2.mpr"/>
       <FILE path="PTESTS/Test1_3.mpr"/>
       <FILE path="PTESTS/Test1_4.mpr"/>
+      <FILE path="PTESTS/Test1_5.mpr"/>
+      <FILE path="PTESTS/Test1_6.mpr"/>
     </SET>
   </SPECFILES>
   <TOOLS>
