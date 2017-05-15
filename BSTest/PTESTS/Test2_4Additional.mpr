@@ -1,11 +1,11 @@
-mscdocument Test2_4;
-msc Test2_4;
+mscdocument Test2_4Additional;
+msc Test2_4Additional;
 Simulator: instance;
 Strategy: instance;
 Simulator: out InitDataComplete,1 to Strategy;
 Strategy: in InitDataComplete,1 from Simulator;
-Simulator: out ShipsCurrentState,2(1, (: (. 1, 1, DESTROYER, 0, SOUTH_WEST, 20, (. 180, 60 .), (: 15, 15, 3, 0 :) .), (. 2, 1, REPAIR_BOAT, 0, SOUTH, 70, (. 180, 65 .), (: 15, 15, 3, 2 :) .) :)) to Strategy;
-Strategy: in ShipsCurrentState,2(1, (: (. 1, 1, DESTROYER, 0, SOUTH_WEST, 20, (. 180, 60 .), (: 15, 15, 3, 0 :) .), (. 2, 1, REPAIR_BOAT, 0, SOUTH, 70, (. 180, 65 .), (: 15, 15, 3, 2 :) .) :)) from Simulator;
+Simulator: out ShipsCurrentState,2(1, (: (. 1, 1, DESTROYER, 2, SOUTH_WEST, 20, (. 180, 60 .), (: 15, 15, 3, 0 :) .), (. 2, 1, REPAIR_BOAT, 0, SOUTH, 70, (. 180, 65 .), (: 15, 15, 3, 2 :) .) :)) to Strategy;
+Strategy: in ShipsCurrentState,2(1, (: (. 1, 1, DESTROYER, 2, SOUTH_WEST, 20, (. 180, 60 .), (: 15, 15, 3, 0 :) .), (. 2, 1, REPAIR_BOAT, 0, SOUTH, 70, (. 180, 65 .), (: 15, 15, 3, 2 :) .) :)) from Simulator;
 Simulator: out VisibleShip,3(1, (: (. 1, 2, DESTROYER, 0, SOUTH_WEST,(. 180, 50 .).) :)) to Strategy;
 Strategy: in VisibleShip,3(1, (: (. 1, 2, DESTROYER, 0, SOUTH_WEST,(. 180, 50 .).) :)) from Simulator;
 Simulator: out StartSimulation,4(0) to Strategy;
